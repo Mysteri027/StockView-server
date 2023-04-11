@@ -13,6 +13,19 @@ class NewsServiceImpl(
 ) : NewsService {
     override fun getAllNews(): List<NewsDto> = newsRepository.findAll().map { it.toDto() }
 
+    override fun getById(id: Int): NewsDto {
+        return newsRepository.findByIdOrNull(id)
+            ?.toDto()
+            ?: throw NoSuchElementException("New with id $id not found")
+    }
+
+    override fun addNews(newsDto: NewsDto): Int {
+        return newsRepository.save(newsDto.toEntity()).id
+    }
+
+    override fun addNewsList(newsList: List<NewsDto>) {
+        newsRepository.saveAll(newsList.map { it.toEntity() })
+    }
 
     private fun NewsEntity.toDto(): NewsDto {
         return NewsDto(
@@ -24,9 +37,13 @@ class NewsServiceImpl(
         )
     }
 
-    override fun getById(id: Int): NewsDto {
-        return newsRepository.findByIdOrNull(id)
-            ?.toDto()
-            ?: throw NoSuchElementException("New with id $id not found")
+    private fun NewsDto.toEntity(): NewsEntity {
+        return NewsEntity(
+            id = 0,
+            title = this.title,
+            description = this.description,
+            newsLink = this.newsLink,
+            imageLink = this.imageLink,
+        )
     }
 }

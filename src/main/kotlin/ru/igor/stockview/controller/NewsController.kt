@@ -21,4 +21,10 @@ class NewsController(private val newsService: NewsService) {
 
     @GetMapping("{id}")
     fun getNewById(@PathVariable("id") id: Int): NewsDto = newsService.getById(id)
+
+    @PostMapping
+    fun addNew(@RequestBody newsDto: NewsDto): Int = newsService.addNews(newsDto)
+
+    @PostMapping("/all")
+    fun addNewsList(@RequestBody newsDtoList: List<NewsDto>) = newsService.addNewsList(newsDtoList)
 }
