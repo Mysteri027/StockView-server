@@ -1,5 +1,6 @@
 package ru.igor.stockview.service.impl
 
+import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 import ru.igor.stockview.dto.NewsDto
 import ru.igor.stockview.entity.NewsEntity
@@ -21,5 +22,11 @@ class NewsServiceImpl(
             newsLink = this.newsLink,
             imageLink = this.imageLink
         )
+    }
+
+    override fun getById(id: Int): NewsDto {
+        return newsRepository.findByIdOrNull(id)
+            ?.toDto()
+            ?: throw NoSuchElementException("New with id $id not found")
     }
 }

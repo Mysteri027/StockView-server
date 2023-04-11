@@ -6,4 +6,5 @@ import ru.igor.stockview.dto.NewsDto
 @Service
 interface NewsService {
     fun getAllNews(): List<NewsDto>
+    fun getById(id: Int): NewsDto
 }
