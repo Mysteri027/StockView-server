@@ -20,6 +20,10 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+    // Spring security для авторизации и регистрации
+    implementation("org.springframework.boot:spring-boot-starter-security")
+
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.mockk:mockk:1.13.4")
@@ -36,7 +40,7 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-tasks.withType<Jar>() {
+tasks.withType<Jar> {
 
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 

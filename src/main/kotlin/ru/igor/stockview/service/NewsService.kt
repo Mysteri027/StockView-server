@@ -8,6 +8,7 @@ interface NewsService {
     fun getAllNews(): List<NewsDto>
     fun getById(id: Int): NewsDto
     fun addNews(newsDto: NewsDto): Int
-    fun addNewsList(newsList: List<NewsDto>)
+    fun addNewsList(newsList: List<NewsDto>): Int
+    fun deleteAllNews()
 
 }
