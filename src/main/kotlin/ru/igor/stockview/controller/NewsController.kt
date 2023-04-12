@@ -27,4 +27,7 @@ class NewsController(private val newsService: NewsService) {
 
     @PostMapping("/all")
     fun addNewsList(@RequestBody newsDtoList: List<NewsDto>) = newsService.addNewsList(newsDtoList)
+
+    @DeleteMapping("/delete")
+    fun deleteAllNews() = newsService.deleteAllNews()
 }
