@@ -7,7 +7,7 @@ import ru.igor.stockview.dto.NewsDto
 import ru.igor.stockview.service.NewsService
 
 @RestController
-@RequestMapping("/news")
+@RequestMapping("/api/v1/news")
 class NewsController(private val newsService: NewsService) {
 
     @ResponseStatus(HttpStatus.NOT_FOUND)

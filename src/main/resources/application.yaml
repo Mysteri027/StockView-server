@@ -12,3 +12,4 @@ spring:
         show_sql: true
         temp:
           use_jdbc_metadata_default: false
+    generate-ddl: true
