@@ -48,7 +48,7 @@ class JwtService {
             .setClaims(extraClaims)
             .setSubject(userDetails.username)
             .setIssuedAt(Date(System.currentTimeMillis()))
-            .setExpiration(Date(System.currentTimeMillis() + 1000 * 60 * 24))
+            .setExpiration(Date(System.currentTimeMillis() + ACCESS_TOKEN_VALIDITY_SECONDS * 1000))
             .signWith(getSignInKey(), SignatureAlgorithm.HS256)
             .compact()
     }
@@ -66,5 +66,6 @@ class JwtService {
 
     companion object {
         private const val SECRET_KEY = "404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970"
+        private const val ACCESS_TOKEN_VALIDITY_SECONDS  = 365 * 24 * 60 * 4
     }
 }
