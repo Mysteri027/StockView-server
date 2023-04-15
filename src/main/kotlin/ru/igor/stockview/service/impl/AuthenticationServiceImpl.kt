@@ -10,6 +10,7 @@ import ru.igor.stockview.dto.AuthenticationResponse
 import ru.igor.stockview.dto.RegisterRequest
 import ru.igor.stockview.entity.Role
 import ru.igor.stockview.entity.UserEntity
+import ru.igor.stockview.exception.UserNotFoundException
 import ru.igor.stockview.repository.UserRepository
 import ru.igor.stockview.service.AuthenticationService
 
@@ -43,7 +44,7 @@ class AuthenticationServiceImpl(
         )
 
         val user =
-            userRepository.findByEmail(authenticationRequest.email) ?: throw NoSuchElementException("User not found")
+            userRepository.findByEmail(authenticationRequest.email) ?: throw UserNotFoundException("User nor found")
 
         val jwt = jwtService.generateToken(user)
         return AuthenticationResponse(token = jwt)

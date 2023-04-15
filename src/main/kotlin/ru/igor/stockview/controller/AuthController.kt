@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*
 import ru.igor.stockview.dto.AuthenticationRequest
 import ru.igor.stockview.dto.AuthenticationResponse
 import ru.igor.stockview.dto.RegisterRequest
+import ru.igor.stockview.exception.UserNotFoundException
 import ru.igor.stockview.service.AuthenticationService
 
 @RestController
@@ -15,7 +16,7 @@ class AuthController(
 ) {
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ExceptionHandler(NoSuchElementException::class)
+    @ExceptionHandler(UserNotFoundException::class)
     fun handleNotFoundException(e: NoSuchElementException): ResponseEntity<Map<String, String?>> {
         return ResponseEntity(mapOf("message" to e.message), HttpStatus.NOT_FOUND)
     }
