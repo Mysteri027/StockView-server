@@ -34,6 +34,9 @@ dependencies {
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.mockk:mockk:1.13.4")
+
+    // Yahoofinance-api
+    implementation("com.yahoofinance-api:YahooFinanceAPI:3.15.0")
 }
 
 tasks.withType<KotlinCompile> {
