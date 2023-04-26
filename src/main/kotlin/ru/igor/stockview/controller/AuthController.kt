@@ -22,16 +22,18 @@ class AuthController(
     }
 
     @PostMapping("/register")
-    fun register(
-        @RequestBody registerRequest: RegisterRequest
-    ): ResponseEntity<AuthenticationResponse> {
+    fun register(@RequestBody registerRequest: RegisterRequest): ResponseEntity<AuthenticationResponse> {
+
+        print("${registerRequest.email} ${registerRequest.password}")
+
         return ResponseEntity.ok(authenticationService.register(registerRequest))
     }
 
     @PostMapping("/login")
-    fun login(
-        @RequestBody authenticationRequest: AuthenticationRequest
-    ): ResponseEntity<AuthenticationResponse> {
+    fun login(@RequestBody authenticationRequest: AuthenticationRequest): ResponseEntity<AuthenticationResponse> {
+
+        print("${authenticationRequest.email} ${authenticationRequest.password}")
+
         return ResponseEntity.ok(authenticationService.login(authenticationRequest))
     }
 }
