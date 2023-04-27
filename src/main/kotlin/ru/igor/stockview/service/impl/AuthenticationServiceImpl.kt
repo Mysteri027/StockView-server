@@ -5,9 +5,9 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
 import ru.igor.stockview.config.JwtService
-import ru.igor.stockview.dto.AuthenticationRequest
-import ru.igor.stockview.dto.AuthenticationResponse
-import ru.igor.stockview.dto.RegisterRequest
+import ru.igor.stockview.dto.auth.AuthenticationRequest
+import ru.igor.stockview.dto.auth.AuthenticationResponse
+import ru.igor.stockview.dto.auth.RegisterRequest
 import ru.igor.stockview.entity.Role
 import ru.igor.stockview.entity.UserEntity
 import ru.igor.stockview.exception.UserNotFoundException

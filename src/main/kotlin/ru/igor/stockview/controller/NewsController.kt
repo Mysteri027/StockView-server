@@ -3,7 +3,7 @@ package ru.igor.stockview.controller
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import ru.igor.stockview.dto.NewsDto
+import ru.igor.stockview.dto.news.NewsDto
 import ru.igor.stockview.service.NewsService
 
 @RestController

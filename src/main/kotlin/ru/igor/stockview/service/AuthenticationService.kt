@@ -1,9 +1,9 @@
 package ru.igor.stockview.service
 
 import org.springframework.stereotype.Service
-import ru.igor.stockview.dto.AuthenticationRequest
-import ru.igor.stockview.dto.AuthenticationResponse
-import ru.igor.stockview.dto.RegisterRequest
+import ru.igor.stockview.dto.auth.AuthenticationRequest
+import ru.igor.stockview.dto.auth.AuthenticationResponse
+import ru.igor.stockview.dto.auth.RegisterRequest
 
 @Service
 interface AuthenticationService {

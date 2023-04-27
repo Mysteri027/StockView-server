@@ -4,7 +4,7 @@ import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
 import jakarta.persistence.Table
-import ru.igor.stockview.dto.StockDto
+import ru.igor.stockview.dto.stock.StockDto
 
 @Entity
 @Table(name = "stock")
@@ -13,17 +13,20 @@ class StockEntity(
     @Column(name = "name")
     val name: String = "",
 
+    @Column(name = "ticker")
+    val ticker: String = "",
+
     @Column(name = "company_description")
     val companyDescription: String = "",
 
     @Column(name = "price")
-    val price: Double = 0.0,
+    var price: Double = 0.0,
 
     @Column(name = "change")
-    val change: Double = 0.0,
+    var change: Double = 0.0,
 
     @Column(name = "changeInPercent")
-    val changeInPercent: Double = 0.0,
+    var changeInPercent: Double = 0.0,
 
     @Column(name = "image_url")
     val imageUrl: String = "",
@@ -34,6 +37,7 @@ class StockEntity(
     fun toDto(): StockDto {
         return StockDto(
             name = this.name,
+            ticker = this.ticker.uppercase(),
             companyDescription = this.companyDescription,
             price = this.price,
             change = this.change,

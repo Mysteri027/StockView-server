@@ -3,9 +3,9 @@ package ru.igor.stockview.controller
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import ru.igor.stockview.dto.AuthenticationRequest
-import ru.igor.stockview.dto.AuthenticationResponse
-import ru.igor.stockview.dto.RegisterRequest
+import ru.igor.stockview.dto.auth.AuthenticationRequest
+import ru.igor.stockview.dto.auth.AuthenticationResponse
+import ru.igor.stockview.dto.auth.RegisterRequest
 import ru.igor.stockview.exception.UserNotFoundException
 import ru.igor.stockview.service.AuthenticationService
 

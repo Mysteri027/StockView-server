@@ -1,4 +1,4 @@
-package ru.igor.stockview.dto
+package ru.igor.stockview.dto.auth
 
 data class RegisterRequest(
     val email: String,

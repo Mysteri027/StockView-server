@@ -1,7 +1,7 @@
 package ru.igor.stockview.entity
 
 import jakarta.persistence.*
-import ru.igor.stockview.dto.NewsDto
+import ru.igor.stockview.dto.news.NewsDto
 
 @Entity
 @Table(name = "news")

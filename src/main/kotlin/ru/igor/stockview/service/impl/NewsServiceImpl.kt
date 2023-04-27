@@ -2,7 +2,7 @@ package ru.igor.stockview.service.impl
 
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
-import ru.igor.stockview.dto.NewsDto
+import ru.igor.stockview.dto.news.NewsDto
 import ru.igor.stockview.repository.NewsRepository
 import ru.igor.stockview.service.NewsService
 

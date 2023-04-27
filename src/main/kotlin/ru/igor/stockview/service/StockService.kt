@@ -1,13 +1,17 @@
 package ru.igor.stockview.service
 
 import org.springframework.stereotype.Service
-import ru.igor.stockview.dto.StockDto
+import ru.igor.stockview.dto.stock.AddStockRequestDto
+import ru.igor.stockview.dto.stock.StockDto
 
 @Service
 interface StockService {
     fun getAllStocks(): List<StockDto>
     fun getStockByName(name: String) : StockDto
-    fun addStock(stockDto: StockDto)
+
+    fun getStockByTicker(ticker: String): StockDto
+    fun addStock(addStockRequestDto: AddStockRequestDto)
     fun deleteAllStocks()
-    fun updateStock(stock: StockDto)
+
+    fun updateStocks()
 }

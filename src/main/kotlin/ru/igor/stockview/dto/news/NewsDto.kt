@@ -1,4 +1,4 @@
-package ru.igor.stockview.dto
+package ru.igor.stockview.dto.news
 
 import ru.igor.stockview.entity.NewsEntity
 
