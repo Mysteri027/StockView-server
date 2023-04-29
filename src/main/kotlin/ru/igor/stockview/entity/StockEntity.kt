@@ -32,7 +32,10 @@ class StockEntity(
     val imageUrl: String = "",
 
     @Column(name = "will_price_go_up")
-    val willPriceGoUp: Boolean = false
+    val willPriceGoUp: Boolean = false,
+
+    @Column(name = "is_favorite")
+    var isFavorite: Boolean = false,
 ) {
     fun toDto(): StockDto {
         return StockDto(
@@ -43,7 +46,8 @@ class StockEntity(
             change = this.change,
             changeInPercent = this.changeInPercent,
             imageUrl = this.imageUrl,
-            willPriceGoUp = this.willPriceGoUp
+            willPriceGoUp = this.willPriceGoUp,
+            isFavorite = this.isFavorite
         )
     }
 }

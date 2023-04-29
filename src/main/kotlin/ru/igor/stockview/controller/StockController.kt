@@ -42,4 +42,14 @@ class StockController(private val stockService: StockService) {
     fun deleteAllStocks() {
         stockService.deleteAllStocks()
     }
+
+    @PostMapping("like/{name}")
+    fun addToFavorite(@PathVariable name: String) {
+        stockService.addStockToFavorite(name)
+    }
+
+    @PostMapping("dislike/{name}")
+    fun deleteFromFavorite(@PathVariable name: String) {
+        stockService.deleteStockFromFavorite(name)
+    }
 }

@@ -12,6 +12,7 @@ data class StockDto(
     val changeInPercent: Double,
     val imageUrl: String,
     val willPriceGoUp: Boolean,
+    val isFavorite: Boolean,
 ) {
     fun toEntity(): StockEntity {
         return StockEntity(
@@ -22,7 +23,8 @@ data class StockDto(
             change = this.change,
             changeInPercent = this.changeInPercent,
             imageUrl = this.imageUrl,
-            willPriceGoUp = this.willPriceGoUp
+            willPriceGoUp = this.willPriceGoUp,
+            isFavorite = this.isFavorite
         )
     }
 }

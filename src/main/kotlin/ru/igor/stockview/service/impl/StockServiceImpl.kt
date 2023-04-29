@@ -52,4 +52,18 @@ class StockServiceImpl(
 
         }
     }
+
+    override fun addStockToFavorite(name: String) {
+        val stock =
+            stockRepository.findByName(name) ?: throw NoSuchElementException("Stock with name $name is not exist")
+        stock.isFavorite = true
+        stockRepository.save(stock)
+    }
+
+    override fun deleteStockFromFavorite(name: String) {
+        val stock =
+            stockRepository.findByName(name) ?: throw NoSuchElementException("Stock with name $name is not exist")
+        stock.isFavorite = false
+        stockRepository.save(stock)
+    }
 }

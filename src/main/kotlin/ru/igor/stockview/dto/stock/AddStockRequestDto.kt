@@ -22,6 +22,7 @@ data class AddStockRequestDto(
             changeInPercent = stock.quote.changeInPercent.toDouble(),
             imageUrl = this.imageUrl,
             willPriceGoUp = this.willPriceGoUp,
+            isFavorite = false,
         )
     }
 }
