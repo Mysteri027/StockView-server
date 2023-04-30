@@ -8,13 +8,10 @@ import ru.igor.stockview.dto.stock.StockDto
 interface StockService {
     fun getAllStocks(): List<StockDto>
     fun getStockByName(name: String): StockDto
-
     fun getStockByTicker(ticker: String): StockDto
     fun addStock(addStockRequestDto: AddStockRequestDto)
     fun deleteAllStocks()
-
     fun updateStocks()
-
     fun addStockToFavorite(name: String)
     fun deleteStockFromFavorite(name: String)
 }
